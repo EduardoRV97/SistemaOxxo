@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>./Includes/;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./Include/;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,15 +128,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Cliente.h" />
-    <ClInclude Include="Prerequisitosh.h" />
-    <ClInclude Include="Producto.h" />
-    <ClInclude Include="Proveedor.h" />
-    <ClInclude Include="Sistema.h" />
+    <ClInclude Include="Include\Cliente.h" />
+    <ClInclude Include="Include\Prerequisitosh.h" />
+    <ClInclude Include="Include\Producto.h" />
+    <ClInclude Include="Include\Proveedor.h" />
+    <ClInclude Include="Include\Sistema.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cliente.cpp" />
-    <ClCompile Include="SistemaOxxo.cpp" />
+    <ClCompile Include="Source\Cliente.cpp" />
+    <ClCompile Include="Source\OxxoClient.cpp" />
+    <ClCompile Include="Source\Producto.cpp" />
+    <ClCompile Include="Source\Proveedor.cpp" />
+    <ClCompile Include="Source\Sistema.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

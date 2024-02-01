@@ -15,28 +15,37 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Prerequisitosh.h">
+    <ClInclude Include="Include\Cliente.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Cliente.h">
+    <ClInclude Include="Include\Prerequisitosh.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Producto.h">
+    <ClInclude Include="Include\Producto.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Sistema.h">
+    <ClInclude Include="Include\Proveedor.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Proveedor.h">
+    <ClInclude Include="Include\Sistema.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cliente.cpp">
-      <Filter>Archivos de recursos</Filter>
+    <ClCompile Include="Source\Proveedor.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="SistemaOxxo.cpp">
-      <Filter>Archivos de recursos</Filter>
+    <ClCompile Include="Source\Cliente.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sistema.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Producto.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\OxxoClient.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -4,12 +4,12 @@
 class Proveedor {
 
 public:
-	Cliente(string _nombre, int _puntos, double _telefono, string _correo) :
-		m_nombre(_nombre), m_puntos(_puntos), m_telefono(_telefono), m_correo(_correo) {}
-	~Cliente() {}
+	Proveedor(string _marca, string _productos) {}
+	~Proveedor() {}
+
+	void AddProduct(string _producto); 
+
 private:
-	string m_nombre;
-	int m_puntos;
-	double m_telefono;
-	string m_correo;
+	string m_marca;
+	vector<string> m_productos;
 };
