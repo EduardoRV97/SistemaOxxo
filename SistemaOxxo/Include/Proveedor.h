@@ -1,15 +1,20 @@
 #pragma once
 #include "Prerequisitosh.h"
+#include "Producto.h"
 
 class Proveedor {
 
 public:
-	Proveedor(string _marca, string _productos) {}
+	Proveedor(string _marca, Producto _productos) {}
 	~Proveedor() {}
 
-	void AddProduct(string _producto); 
+	void AddProduct(Producto _producto); 
+	void SetProduct(string _marca);
+
+	string GetMarca();
+	Producto GetProducto(int ID);
 
 private:
 	string m_marca;
-	vector<string> m_productos;
+	vector<Producto> m_productos;
 };
