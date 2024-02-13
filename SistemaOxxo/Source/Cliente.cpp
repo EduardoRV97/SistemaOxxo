@@ -1,11 +1,12 @@
+//Codigo fuente de la clase Cliente, donde incluiremos nuestros metodos para asignar y obtener valores.
 #include "Cliente.h"
 
-void Cliente::setCliente(string nombre, int puntos, double telefono, string correo)
+void Cliente::setCliente(string _nombre, int _puntos, double _telefono, string _correo)
 {
-	m_nombre = nombre;
-	m_puntos = puntos;
-	m_telefono = telefono;
-	m_correo = correo;
+	m_nombre = _nombre;
+	m_puntos = _puntos;
+	m_telefono = _telefono;
+	m_correo = _correo;
 }
 
 string Cliente::getNombre()

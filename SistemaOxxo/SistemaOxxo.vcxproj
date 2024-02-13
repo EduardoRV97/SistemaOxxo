@@ -128,15 +128,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Bebidas.h" />
     <ClInclude Include="Include\Cliente.h" />
+    <ClInclude Include="Include\Papas.h" />
     <ClInclude Include="Include\Prerequisitosh.h" />
     <ClInclude Include="Include\Producto.h" />
     <ClInclude Include="Include\Proveedor.h" />
     <ClInclude Include="Include\Sistema.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Bebidas.cpp" />
     <ClCompile Include="Source\Cliente.cpp" />
     <ClCompile Include="Source\OxxoClient.cpp" />
+    <ClCompile Include="Source\Papas.cpp" />
     <ClCompile Include="Source\Producto.cpp" />
     <ClCompile Include="Source\Proveedor.cpp" />
     <ClCompile Include="Source\Sistema.cpp" />

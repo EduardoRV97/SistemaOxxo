@@ -1,23 +1,23 @@
+//Clase Producto, aqui crearemos la clase Padre que contendra los rasgos basicos de los alimentos
 #pragma once
 #include "Prerequisitosh.h"
 
 class Producto{
 
 public:
-	Producto() {}
-	Producto(string _nombre, float _peso) : m_nombre(_nombre), m_peso(_peso) {}
+	Producto(){}
+	Producto(int _ID, string _nombre, float _peso) : m_ID(_ID), m_nombre(_nombre), m_peso(_peso) {}
 	~Producto() {}
-protected:
-	string m_nombre;
-	float m_peso;
 public:
-	int m_ID;
+	string m_nombre;//Nombre del Producto
+	float m_peso;//Peso del producto
+public:
+	int m_ID; //ID unico por objeto
+public:
+	void setProducto(int _ID, string _nombre, float _peso);//Asignacion de valores
+private://Metodos para obetner los valores
+	int getID();
+	string getNombre();
+	float getPeso();
 };
 
-class Papas : public Producto{
-public: 
-	Papas(string _nombre, float _peso) : Producto(_nombre, _peso){}
-	~Papas() {}
-public: 
-	void Proporcionar();
-};

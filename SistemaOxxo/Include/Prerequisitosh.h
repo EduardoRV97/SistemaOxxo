@@ -1,3 +1,4 @@
+//Prerrequisitos del sistema, necesarios para su inicializacion
 #pragma once
 #include <iostream>
 #include <string>
