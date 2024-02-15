@@ -6,7 +6,7 @@
 #include "Bebidas.h"
 #include "Sistema.h"
 
-int main(){
+int main() {
 	Sistema sistema = Sistema();
-return 0;
+	return 0;
 };

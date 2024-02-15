@@ -139,7 +139,7 @@
   <ItemGroup>
     <ClCompile Include="Source\Bebidas.cpp" />
     <ClCompile Include="Source\Cliente.cpp" />
-    <ClCompile Include="Source\OxxoClient.cpp" />
+    <ClCompile Include="Source\OxxoCLient.cpp" />
     <ClCompile Include="Source\Papas.cpp" />
     <ClCompile Include="Source\Producto.cpp" />
     <ClCompile Include="Source\Proveedor.cpp" />
