@@ -25,22 +25,18 @@ vector<Producto>& Proveedor::GetProducts()
 
 void Proveedor::eliminarProductos(int m_ID)
 {
-	m_productos.erase(m_productos.begin() + 1);
-	/*for (int i = 0; i < m_productos.size(); i++)
+	for (int i = 0; i < m_productos.size(); i++)
 	{
-		cout << "ppppppppppppppopppppppp" << endl;
-		cout << m_ID << endl;
-		cout << m_productos[i].m_ID << endl;
 		if (m_ID == m_productos[i].m_ID) {
 			cout << i << endl;
-			m_productos.erase(m_productos.begin() + 1);
+			m_productos.erase(m_productos.begin() + i);
 		}
-	};*/
+	};
 }
 
 string Proveedor::GetMarca()
 {
-	return string(m_marca);  //Metodo para obtener marca
+	return m_marca;  //Metodo para obtener marca
 }
 
 Producto Proveedor::GetProducto(int _ID) //Metodo para obtener un producto medinte ID
@@ -49,7 +45,7 @@ Producto Proveedor::GetProducto(int _ID) //Metodo para obtener un producto medin
 		if (producto.m_ID == _ID) { //Si el ID de producto es igual al ID solicitado, entonces te regresa un producto
 			return producto;
 		}
-	}return Producto(999,"none",0); //Al terminar el ciclo, te regresa a Producto
+	}return Producto(999, "none", 0); //Al terminar el ciclo, te regresa a Producto
 }
 
 

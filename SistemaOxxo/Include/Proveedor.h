@@ -6,12 +6,9 @@
 class Proveedor {
 
 public:
-	Proveedor(string _marca){}
-	Proveedor(string _marca, Producto _productos) {} //Constructor de tu prooveedor
-	~Proveedor() {} //Destructor de tu proovedor
+	Proveedor(string _marca) : m_marca(_marca) {} //Constructor de tu prooveedor
 
-public: 
-
+public:
 	void AddProduct(Producto _producto);  //Metodo para asignar valores al vector Producto
 	void SetMarca(string _marca); //Metodo para asignar una Marca
 	void imprimirInv();//Metodo que imprime los datos de los productos
