@@ -14,6 +14,21 @@ Sistema::~Sistema()
 
 void Sistema::mostrarProductos()//Metodo que nos permite ver a todos los objetos de la lista
 {
+	cout << "Espere un momento en lo que carga la GRAN cantidad, GRAN variedad y GRAN calidad de los productos que vendemos en OXO" << endl;
+	for (int i = 0; i <= 100; ++i) {//Un recorrido que muestra un porcentaje de avance con varios "errores" entre ciertos porcentajes
+		cout << "Cargando " << i << "%";
+		if (i == 95) {//Al llegar al 97%, se muestra un mensaje y el programa espera 2 segundos para continuar
+			cout << " Si se pregunta porque tarda mas en ver los productos que en venderlos, es porque aqui aplicamos matematicas avanzadas para muestra de valores finitos" << endl;
+			this_thread::sleep_for(chrono::seconds(2));
+		}
+		if (i == 98) {//Al llegar al 99%, se muestra  un mensaje y el programa espera 3 segundos para continuar
+			cout << " Alguna vez a calculado cuantos metros son de aqui al sol?, ese es el tamano de nuestras ecuaciones para procesar la GRAN cantidad de datos que tenemos" << endl;
+			this_thread::sleep_for(chrono::seconds(3));
+		}
+		cout << endl;
+		this_thread::sleep_for(chrono::milliseconds(30)); // Velocidad de la impresion, marcada en 50 milisegundos
+	}
+	cout << "Inventario actual:       " << endl;
 	for (Proveedor proveedor : m_proovedores) {//Un for que recorre toda la lista de objetos existentes
 		proveedor.imprimirInv();//Cada valor existente lo manda a un metodo que lo imprime
 	}
@@ -21,7 +36,22 @@ void Sistema::mostrarProductos()//Metodo que nos permite ver a todos los objetos
 
 void Sistema::venderProductos()//Metodo que permite la venta de productos, imprimiendo la lista, para que el usuario elija que le gutaria comprar
 //Exceptuando los producto con un ID 999 que son los no existentes, y recorriendo la lista para borrar ese objeto
-{
+{cout << " Espere un momento en lo que carga el sistema de venta" << endl;
+for (int i = 0; i <= 100; i+=2) {//Un recorrido que muestra un porcentaje de avance con varios "errores" entre ciertos porcentajes
+	cout << "Cargando " << i << "%";
+	if (i == 60) {//Al llegar al 97%, se muestra un mensaje y el programa espera 6 segundos para continuar
+		cout << " Al parecer se ha detectado un fallo que podria eliminar todo el sistema" << endl;
+		this_thread::sleep_for(chrono::seconds(6));
+		cout << " Al parecer no era nada, solo se me olvido poner un ;" << endl;
+	}
+	if (i == 98) {//Al llegar al 99%, se muestra  un mensaje y el programa espera 3 segundos para continuar
+		cout << " Esta opcion carga mas rapido, para que el cliente no ponga mas quejas y tenga que trabajar mas" << endl;
+		this_thread::sleep_for(chrono::seconds(3));
+	}
+	cout << endl;
+	this_thread::sleep_for(chrono::milliseconds(10)); // Velocidad de la impresion, marcada en 50 milisegundos
+}
+cout << "Inventario actual:       " << endl;
 	for (Proveedor proveedor : m_proovedores) {//For que recorre toda la lista e imprimirla.
 		proveedor.imprimirInv();
 	}
@@ -53,6 +83,20 @@ void Sistema::registrarProductos()//Metodo para registrar productos
 	int ID;
 	string nombre;
 	float peso;
+	cout << " Espere un momento en lo que carga el sistema" << endl;
+	for (int i = 0; i <= 100; ++i) {//Un recorrido que muestra un porcentaje de avance con varios "errores" entre ciertos porcentajes
+		cout << "Cargando " << i << "%";
+		if (i == 97) {//Al llegar al 97%, se muestra un mensaje y el programa espera 2 segundos para continuar
+			cout << " SI SE ATORO EN 97 ES PORQUE EL DESARROLLADOR NO HA COMIDA EN EL DIA" << endl;
+			this_thread::sleep_for(chrono::seconds(2));
+		}
+		if (i == 99) {//Al llegar al 99%, se muestra  un mensaje y el programa espera 3 segundos para continuar
+			cout << " YA COMI, PERO SIGO EN HUELGA. LOS ERRORES SEGUIRAN HASTA QUE ME AUMENTEN EL SUELDO" << endl;
+			this_thread::sleep_for(chrono::seconds(3));
+		}
+		cout << endl;
+		this_thread::sleep_for(chrono::milliseconds(25)); // Velocidad de la impresion, marcada en 50 milisegundos
+	}
 	cout << "Seleccione al provedor donde le gustaria anadir un producto" << endl;
 	//Un for que recorra la lista de proovedores, que ayudara a identificar donde se incluira el producto
 	for (Proveedor proveedor : m_proovedores) {
@@ -82,6 +126,20 @@ void Sistema::registrarClientes()//Metodo que permite registrar cliente, dandote
 	int puntos;
 	double telefono;
 	string correo;
+	cout << "Un momento en lo que se cargan los datos" << endl;
+	for (int i = 0; i <= 100; ++i) {//Un recorrido que muestra un porcentaje de avance con varios "errores" entre ciertos porcentajes
+		cout << "Cargando " << i << "%";
+		if (i == 10) {//Al llegar al 10%, se muestra un mensaje y el programa espera 2 segundos para continuar
+			cout << " Cargando las quejas de los clientes" << endl;
+			this_thread::sleep_for(chrono::seconds(2));
+		}
+		if (i == 80) {//Al llegar al 80%, se muestra  un mensaje y el programa espera 3 segundos para continuar
+			cout << " Otro cliente se volvio a quejar, eso limita al servidor, ya que primero lo que manda el cliente" << endl;
+			this_thread::sleep_for(chrono::seconds(3));
+		}
+		cout << endl;
+		this_thread::sleep_for(chrono::milliseconds(25)); // Velocidad de la impresion, marcada en 50 milisegundos
+	}
 	cout << "Los clientes registrado actualmente son: " << endl;
 	//Un for que recorre la lista m_clientes, para mostrarte todos los clientes y su informacion registrada
 	for (Cliente cliente : m_clientes) {
@@ -110,14 +168,14 @@ void Sistema::registrarClientes()//Metodo que permite registrar cliente, dandote
 	//}
 }
 
-void Sistema::registroProvedores()
+void Sistema::registroProvedores()//Metodo que nos permite ingresa un nuevo proovedor al sistema
 {
 	string marca;
 	cout << "En un momento se le mostraran las marcas registradas actualmente" << endl;
 	int a;
 	for (int i = 0; i <= 100; ++i) {//Un recorrido que muestra un porcentaje de avance con varios "errores" entre ciertos porcentajes
 		cout << "Cargando " << i << "%";
-		if (i == 33) {//Al llegar al 50%, se muestra un mensaje y el programa espera 4 segundos para continuar
+		if (i == 33) {//Al llegar al 33%, se muestra un mensaje y el programa espera 4 segundos para continuar
 			cout << " Fallo al mostrar, haciendo el codigo de nuevo" << endl;
 			this_thread::sleep_for(chrono::seconds(2));
 		}
@@ -134,17 +192,17 @@ void Sistema::registroProvedores()
 	};
 	cout << "Cual es el nombre de la marca que desea incluir al sistema?" << endl;
 	cin >> marca;
-	Proveedor nuevo(marca);
-	m_proovedores.push_back(nuevo);
-	cout << "Se le mostrara la lista actual de proveedores" << endl;
+	Proveedor nuevo(marca);//Crea un nuevo objeto donde se anadira la marca registrada por el usuario
+	m_proovedores.push_back(nuevo);//Empuja al vector el nuevo valor de la marca
+	cout << "Se le mostrara la lista actual de proveedores" << endl;//Nos vuelve a mostrar la lista de proveedores actualizada
 	for (Proveedor proveedor : m_proovedores) {
 		cout << "------------" << proveedor.GetMarca() << "---------------" << endl;
 	};
 }
 
-/*void Sistema::borrarClientes()
+void Sistema::borrarClientes()
 {
-}*/
+}
 
 /*void Sistema::errorSistema()
 {
@@ -216,7 +274,10 @@ void Sistema::menu()//Metodo que ingresa a un menu, al iniciar el programa
 			<< "1.----------Mostrar el inventario actual" << endl
 			<< "2.----------Comprar un producto" << endl
 			<< "3.----------Añadir al inventario un producto" << endl
-			<< "4.----------Añadir cliente al sistema" << endl;
+			<< "4.----------Añadir cliente al sistema" << endl
+			<< "5.----------Añadir proovedores al sistema" << endl
+			<< "6.----------Eliminar clientes del sistema" << endl;
+			
 		cin >> a;
 
 		switch (a)
@@ -236,11 +297,14 @@ void Sistema::menu()//Metodo que ingresa a un menu, al iniciar el programa
 		case 5:
 			registroProvedores();//En caso de presionar 5, lleva al metodo registro deProvedores
 			break;
+		case 6:
+			borrarClientes(); //En caso de presionar 6, lleva al metodo borrarClientes
+			break;
 		default:
 			cout << "Has seleccionado salir, se le sacara del programa y se borrara todo el inventario" << endl;
 
 		}
-	} while (a >= 1 && a <= 6);//Cualquier numero incorrecto los sacara del programa
+	} while (a >= 1 && a <= 7);//Cualquier numero incorrecto los sacara del programa
 	}
 
 /*void Sistema::AddCliente(Cliente _clientes)

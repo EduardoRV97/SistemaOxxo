@@ -20,7 +20,7 @@ private:
 	void registrarProductos(); //Metodo para registrar nuevos productos al sistema
 	void registrarClientes(); //Metodo para registrar nuevos clientes al sistema
 	void registroProvedores(); //Metodo para registrar nuevos provedores
-	//void borrarClientes(); //Metodo para borrar clientes
+	void borrarClientes(); //Metodo para borrar clientes
 	//void errorSistema(); //Metodo para que se genere un error de vez en cuando
 	//void caerSistema(); //Metodo para una salida forzada del sistema
 	//void eventoAleatorio(); //Metodo para eventos aleatorios
