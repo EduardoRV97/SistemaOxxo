@@ -23,7 +23,8 @@ vector<Producto>& Proveedor::GetProducts()
 	return m_productos;
 }
 
-void Proveedor::eliminarProductos(int m_ID)
+void Proveedor::eliminarProductos(int m_ID)//Metodo que elimina el producto, de acuerdo a su ID, y recorre toda la lista. 
+//En caso de encontrarlo, se borrara el primero pero con el numero de i sumado
 {
 	for (int i = 0; i < m_productos.size(); i++)
 	{

@@ -150,20 +150,20 @@ void Sistema::registrarClientes()//Metodo que permite registrar cliente, dandote
 		};
 	//Un for que recorre la lista de m_clientes, y permite al usuario anadir sus datos.
 	//for (Cliente cliente : m_clientes) {
-		cout << "Ingrese un ID del producto que desee añadir: " << endl;
+		cout << "Ingrese el nombre del usuario que quiere incluir: " << endl;
 		cin >> nombre;
 		cin.ignore();
-		cout << "Ingrese el nombre del producto que desee añadir: " << endl;
+		cout << "Ingrese la cantidad de puntos que registra el cliente: " << endl;
 		cin >> puntos;
-		cout << "Ingrese el peso del producto que desee añadir: " << endl;
+		cout << "Ingrese el numero de telefono del cliente: " << endl;
 		cin >> telefono;
-		cout << "Ingrese el peso del producto que desee añadir: " << endl;
+		cout << "Ingrese el correo del cliente: " << endl;
 		cin >> correo;
 		cin.ignore();
 		Cliente cliente(nombre, puntos, telefono, correo);//Se crea un objeto, al cual se le incluiran los datos que se llenaron previamente.
 		m_clientes.push_back(cliente);
 
-		cout << "------Producto registrado exitosamente---------" << endl;
+		cout << "------CLiente registrado exitosamente---------" << endl;
 
 	//}
 }
@@ -200,8 +200,51 @@ void Sistema::registroProvedores()//Metodo que nos permite ingresa un nuevo proo
 	};
 }
 
-void Sistema::borrarClientes()
+void Sistema::borrarClientes()//Metodo que eliminara a los clientes seleccionados por su nombre
 {
+	cout << "Un momento en lo que carga la base de datos de los amados y respetados clientes, nuestros dioses" << endl;
+	for (int i = 0; i <= 100; i+=4) {//Un recorrido que muestra un porcentaje de avance con varios "errores" entre ciertos porcentajes
+		cout << "Cargando " << i << "%";
+		if (i == 40) {//Al llegar al 40%, se muestra un mensaje y el programa espera 2 segundos para continuar
+			cout << " Se registrado una persona que tiene un nombre de 10 palabras y crasheo el servidor" << endl;
+			this_thread::sleep_for(chrono::seconds(2));
+		}
+		if (i == 80) {//Al llegar al 80%, se muestra  un mensaje y el programa espera 3 segundos para continuar
+			cout << " Como es posible que alguien le meta 999999999 puntos al sistema" << endl;
+			this_thread::sleep_for(chrono::seconds(3));
+		}
+		cout << endl;
+		this_thread::sleep_for(chrono::milliseconds(60)); // Velocidad de la impresion, marcada en 50 milisegundos
+	}
+	int i = 0;
+	string cliente2;
+	cout << "Se le mostrara la lista de clientes: " << endl;
+	for (Cliente cliente : m_clientes) {//Para mostrar la lista de clientes
+		cout << "---Nombre del cliente: " << cliente.m_nombre << endl
+			<< "---Puntos en el sistema: " << cliente.m_puntos << endl
+			<< "---Numero de telefono: " << cliente.m_telefono << endl
+			<< "---Correo electronico: " << cliente.m_correo << endl;
+			cout << endl;
+	};
+	cout << "Que usuario le gustaria eliminar: " << endl;
+	cin >> cliente2;
+	auto it = m_clientes.begin();//Con la funcion auto, se deduce el tipo de variable el cual es string, y le da esas propiedades, permitiendole comparar el resultado con
+	//"it" que apunta a m_nombre, con el valor que ingreso el usuario
+	while (it != m_clientes.end()) {//No para hasta que el valor de "it" sea diferente que toda la lista de clientes
+		if (cliente2 == it->m_nombre) {//Si cliente 2 en identico a "it" que apunta a m_nombre, entonces lo eliminar
+			it = m_clientes.erase(it); // Elimina el valor del vector m_clientes usando a it como indicador y luego le da su valor.
+		}
+		else {
+			++it;//Si no lo encuentra, va al siguiente espacio de la lista
+		}
+	}
+	for (Cliente cliente : m_clientes) {//Para mostrar la lista de clientes
+		cout << "---Nombre del cliente: " << cliente.m_nombre << endl
+			<< "---Puntos en el sistema: " << cliente.m_puntos << endl
+			<< "---Numero de telefono: " << cliente.m_telefono << endl
+			<< "---Correo electronico: " << cliente.m_correo << endl;
+		cout << endl;
+	}
 }
 
 /*void Sistema::errorSistema()
@@ -241,8 +284,8 @@ void Sistema::inicalizarDatos()//Metodo que esta ligado al constructor para inic
 	pepsico.AddProduct(Papas(19, "Cheetos Torciditos", 145.0f));
 	m_proovedores.push_back(cocacolafemsa);
 	m_proovedores.push_back(pepsico);
-	Cliente juan("Juan", 23, 4423456785, "gmail");
-	Cliente pepe("Pepe", 45, 4423457854, "outlook");
+	Cliente juan("Eduardo", 9999999, 4423456785, "gmail");
+	Cliente pepe("JuanaPerezGarciaDelCarmenCruzAguilarBazcaMariaJose", 45, 4423457854, "outlook");
 	m_clientes.push_back(juan);
 	m_clientes.push_back(pepe);
 }
